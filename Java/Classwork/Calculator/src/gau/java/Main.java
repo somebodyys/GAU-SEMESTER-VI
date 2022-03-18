@@ -20,11 +20,15 @@ public class Main {
             case '*' -> result = x * y;
             case '+' -> result = x + y;
             case '-' -> result = x - y;
-            case '/' -> result = x / y;
+            case '/' -> result = y == 0 ? 0 : x / y;
             case '^' -> result = Math.pow(x, y);
         }
 
         System.out.println(result);
+    }
+
+    private static void secondCalculator(){
+
     }
 
     public static void main(String[] args) {
