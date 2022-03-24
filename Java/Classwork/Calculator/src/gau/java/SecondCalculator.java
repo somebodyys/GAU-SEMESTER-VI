@@ -1,6 +1,5 @@
 package gau.java;
 
-import java.util.Arrays;
 import java.util.Stack;
 
 public class SecondCalculator {
@@ -11,67 +10,65 @@ public class SecondCalculator {
     }
 
     public int calculate(){
-        char[] chars = this.expression.toCharArray();
-        String operators = "+-*/";
+        char[] spitedCharacters = this.expression.toCharArray();
+        String supportedOperators = "+-*/";
 
-        Stack<Integer> values = new Stack<>();
-        Stack<Character> ops = new Stack<>();
+        Stack<Integer> valuesStack = new Stack<>();
+        Stack<Character> operationsStack = new Stack<>();
 
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == ' ')
+        for (int i = 0; i < spitedCharacters.length; i++) {
+            if (spitedCharacters[i] == ' ')
                 continue;
 
-            if(Character.isDigit(chars[i])){
+            if(Character.isDigit(spitedCharacters[i])){
                 StringBuilder valueBuffer = new StringBuilder();
 
-                while(i < chars.length && Character.isDigit(chars[i]))
-                    valueBuffer.append(chars[i++]);
+                while(i < spitedCharacters.length && Character.isDigit(spitedCharacters[i]))
+                    valueBuffer.append(spitedCharacters[i++]);
 
-                values.push(Integer.parseInt(valueBuffer.toString()));
+                valuesStack.push(Integer.parseInt(valueBuffer.toString()));
 
                 i--;
             }
-            else if(chars[i] == '(')
-                ops.push(chars[i]);
-            else if(chars[i] == ')'){
-                while(ops.peek() != '(')
-                    values.push(applyOp(
-                            ops.pop(), values.pop(), values.pop()
+            else if(spitedCharacters[i] == '(')
+                operationsStack.push(spitedCharacters[i]);
+            else if(spitedCharacters[i] == ')'){
+                while(operationsStack.peek() != '(')
+                    valuesStack.push(apply(
+                            operationsStack.pop(), valuesStack.pop(), valuesStack.pop()
                     ));
-                ops.pop();
-            }else if(operators.indexOf(chars[i]) != -1){
-                while(!ops.empty() && hasAdvantage(chars[i], ops.peek()))
-                    values.push(applyOp(ops.pop(), values.pop(), values.pop()));
+                operationsStack.pop();
+            }else if(supportedOperators.indexOf(spitedCharacters[i]) != -1){
+                while(!operationsStack.empty() && hasAdvantage(spitedCharacters[i], operationsStack.peek()))
+                    valuesStack.push(apply(operationsStack.pop(), valuesStack.pop(), valuesStack.pop()));
 
-                ops.push(chars[i]);
+                operationsStack.push(spitedCharacters[i]);
             }
         }
 
-        while (!ops.empty())
-            values.push(
-                    applyOp(ops.pop(), values.pop(), values.pop())
+        while (!operationsStack.empty())
+            valuesStack.push(
+                    apply(operationsStack.pop(), valuesStack.pop(), valuesStack.pop())
             );
 
-        return values.pop();
+        return valuesStack.pop();
     }
 
-    public static boolean hasAdvantage(char op1, char op2){
-        if(op2 == '(' || op2 == ')')
+    public static boolean hasAdvantage(char firstOperation, char secondOperation){
+        if(secondOperation == '(' || secondOperation == ')')
             return false;
-        if((op1 == '*' || op1 == '/') && (op2 == '+' || op2 == '-'))
-            return false;
-        return true;
+        return (firstOperation != '*' && firstOperation != '/') || (secondOperation != '+' && secondOperation != '-');
     }
 
-    public static int applyOp(char op, int b, int a){
-        switch (op){
-            case '+': return a + b;
-            case '-': return a - b;
-            case '*': return a * b;
+    public static int apply(char operation, int followingNumber, int leadingNumber){
+        switch (operation){
+            case '+': return leadingNumber + followingNumber;
+            case '-': return leadingNumber - followingNumber;
+            case '*': return leadingNumber * followingNumber;
             case '/':
-                if(b == 0)
+                if(followingNumber == 0)
                     throw new UnsupportedOperationException("No zero division");
-                return a / b;
+                return leadingNumber / followingNumber;
         }
 
         return 0;
