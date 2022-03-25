@@ -5,6 +5,11 @@ import java.util.Scanner;
 
 public class A {
 
+    /**
+     * შეიტანეთ a და b მთელი რიცხვები, გამოიტანეთ [a; b] შუალედიდან 10
+     * შემთხვევითი რიცხვი. დაადგინეთ რამდენი ლუწი და რამდენი კენტი რიცხვია
+     * გამოტანილ რიცხვებს შორის.
+     */
     public static void method1(){
         int a, b, evenCounter = 0, oddCounter = 0;
         Scanner scanner = new Scanner(System.in);
