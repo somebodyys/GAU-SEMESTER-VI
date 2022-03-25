@@ -14,7 +14,9 @@ public class A {
 
         for (int i = 0; i < 10; i++) {
             int randNumber = random.nextInt(a, b);
+
             System.out.println(randNumber);
+
             if(randNumber % 2 == 1){
                 oddCounter++;
             } else {
