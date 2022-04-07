@@ -1,15 +1,15 @@
 import { useForm } from "react-hook-form"
-import { useDrinks, useDrinksDelete } from "../contexts/DrinksContext"
+import { useDrinks } from "../contexts/DrinksContext"
+import { TYPES } from "../reducers/drinkReducer"
 
 const Table = () => {
 
-    const drinks = useDrinks()
-    const drinksDelete = useDrinksDelete()
+    const {drinks, dispatch} = useDrinks()
 
     const { register, handleSubmit} = useForm()
 
     const onSubmit = data => {
-        drinksDelete(data)
+        dispatch({ type: TYPES.DELETE_DRINKS, payload: data})
     }
 
     return(

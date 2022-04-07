@@ -1,9 +1,9 @@
 import axios from "axios";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useReducer, useState } from "react";
+import drinkReducer, { TYPES } from "../reducers/drinkReducer";
 
 const DrinksContext = createContext()
 const DrinksSearchContext = createContext()
-const DrinksDelete = createContext()
 
 export function useDrinks(){
     return useContext(DrinksContext)
@@ -13,13 +13,9 @@ export function useDrinksSearch(){
     return useContext(DrinksSearchContext)
 }
 
-export function useDrinksDelete(){
-    return useContext(DrinksDelete)
-}
-
 export function DrinksProvider({ children }){
 
-    const [drinks, setDrinks] = useState([]);
+    const [drinks, dispatch] = useReducer(drinkReducer, []);
     const [keyword, setKeyword] = useState("");
 
     useEffect(() => {
@@ -28,27 +24,14 @@ export function DrinksProvider({ children }){
                 s: keyword 
             }
         }).then(response => {
-            setDrinks(response.data.drinks ?? [])
+            dispatch({ type: TYPES.SET_DRINKS, payload: response.data.drinks ?? []})
         })
     }, [keyword])
     
-    const deleteDrinks = (list) => {
-        let temp = drinks;
-        list.deleteList.map(item => {
-            temp = temp.filter((value) => {
-                return value.idDrink !== item
-            })
-            return true
-        })
-        setDrinks(temp)
-    }
-
     return (
-        <DrinksContext.Provider value={drinks}>
+        <DrinksContext.Provider value={{drinks, dispatch}}>
             <DrinksSearchContext.Provider value={setKeyword}>
-                <DrinksDelete.Provider value={deleteDrinks}>
-                    { children }
-                </DrinksDelete.Provider>
+                { children }
             </DrinksSearchContext.Provider>
         </DrinksContext.Provider>
     );
