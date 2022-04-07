@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { useDrinks, useDrinksDelete } from "../contexts/DrinksContext"
 
@@ -8,16 +7,9 @@ const Table = () => {
     const drinksDelete = useDrinksDelete()
 
     const { register, handleSubmit} = useForm()
-    
-    const [deleteList, setDeleteList] = useState([])
-
-    const handleDelete = () => {
-        drinksDelete(deleteList)
-    }
 
     const onSubmit = data => {
-        setDeleteList(data)
-        handleDelete()
+        drinksDelete(data)
     }
 
     return(

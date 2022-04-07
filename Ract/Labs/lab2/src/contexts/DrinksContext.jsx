@@ -17,8 +17,6 @@ export function useDrinksDelete(){
     return useContext(DrinksDelete)
 }
 
-
-
 export function DrinksProvider({ children }){
 
     const [drinks, setDrinks] = useState([]);
@@ -38,8 +36,9 @@ export function DrinksProvider({ children }){
         let temp = drinks;
         list.deleteList.map(item => {
             temp = temp.filter((value) => {
-                return value.idDrink != item
+                return value.idDrink !== item
             })
+            return true
         })
         setDrinks(temp)
     }
