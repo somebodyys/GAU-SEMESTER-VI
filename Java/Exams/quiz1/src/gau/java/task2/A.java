@@ -31,10 +31,10 @@ public class A {
      * ადგენს x მარტივია თუ შედგენილი
      */
     public boolean method3(){
-        boolean isPrime = false;
-        for (int i = 2; i < this.x / 2; i++) {
+        boolean isPrime = true;
+        for (int i = 2; i < Math.sqrt(this.x); i++) {
             if(this.x % i == 0){
-                isPrime = true;
+                isPrime = false;
                 break;
             }
         }

@@ -35,14 +35,14 @@ public class C {
      * აბრუნებს b რიცხვის გამყოფების ნამრავლს;
      */
     public double method3(){
-        double divisorsMultiply = 1;
+        double divisorsMultiply = this.b;
 
-        for (int i = 1; i < Math.sqrt(this.b); i++) {
+        for (int i = 2; i < Math.sqrt(this.b); i++) {
             if (this.b % i == 0){
                 if(this.b / i == i)
                     divisorsMultiply *= i;
                 else
-                    divisorsMultiply *= (double) i * this.b / i;
+                    divisorsMultiply *= this.b;
             }
         }
 

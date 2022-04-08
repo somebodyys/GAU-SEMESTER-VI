@@ -34,10 +34,10 @@ public class A {
     }
 
     private boolean isPrime(int number){
-        boolean isPrime = false;
-        for (int i = 2; i < number / 2; i++) {
+        boolean isPrime = true;
+        for (int i = 2; i < Math.sqrt(number); i++) {
             if(number % i == 0){
-                isPrime = true;
+                isPrime = false;
                 break;
             }
         }
