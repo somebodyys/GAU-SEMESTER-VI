@@ -1,5 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println(Lab7.method1());
+        Lab7.method2();
     }
 }
