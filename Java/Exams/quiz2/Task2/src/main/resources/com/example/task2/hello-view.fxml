@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="169.0" prefWidth="204.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task2.HelloController">
+   <children>
+      <TextField fx:id="input" layoutX="17.0" layoutY="15.0" prefHeight="29.0" prefWidth="171.0" />
+      <Button layoutX="17.0" layoutY="52.0" mnemonicParsing="false" onAction="#calculate" prefHeight="71.0" prefWidth="171.0" text="=" />
+      <Label fx:id="status" layoutX="17.0" layoutY="139.0" textFill="#00ff26" />
+   </children>
+</AnchorPane>
