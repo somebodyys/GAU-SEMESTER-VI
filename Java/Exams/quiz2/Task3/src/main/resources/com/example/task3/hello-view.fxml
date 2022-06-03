@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="712.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task3.HelloController">
+   <children>
+      <TableView fx:id="university_table" layoutX="11.0" layoutY="137.0" prefHeight="273.0" prefWidth="691.0">
+        <columns>
+          <TableColumn fx:id="id_column" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="name_column" prefWidth="122.0" text="name" />
+            <TableColumn fx:id="address_column" prefWidth="219.0" text="address" />
+            <TableColumn fx:id="phone_column" prefWidth="122.0" text="phone" />
+            <TableColumn fx:id="headmaster_column" prefWidth="152.0" text="headmaster" />
+        </columns>
+      </TableView>
+      <TextField fx:id="delete_id_input" layoutX="40.0" layoutY="425.0" prefHeight="24.0" prefWidth="74.0" />
+      <Button layoutX="127.0" layoutY="425.0" mnemonicParsing="false" onAction="#delete" text="Remove Record" />
+      <Label layoutX="14.0" layoutY="429.0" text="ID" />
+      <Label layoutX="28.0" layoutY="30.0" text="Name" />
+      <Label layoutX="28.0" layoutY="89.0" text="Address" />
+      <Label layoutX="305.0" layoutY="30.0" text="Phone" />
+      <Label layoutX="305.0" layoutY="89.0" text="Headmaster" />
+      <TextField fx:id="name_input" layoutX="89.0" layoutY="26.0" />
+      <TextField fx:id="address_input" layoutX="89.0" layoutY="85.0" />
+      <TextField fx:id="phone_input" layoutX="395.0" layoutY="26.0" />
+      <TextField fx:id="headmaster_input" layoutX="395.0" layoutY="85.0" />
+      <Button layoutX="587.0" layoutY="26.0" mnemonicParsing="false" onAction="#save" prefHeight="83.0" prefWidth="115.0" text="Save" />
+      <Label fx:id="status" layoutX="287.0" layoutY="429.0" />
+   </children>
+</AnchorPane>
