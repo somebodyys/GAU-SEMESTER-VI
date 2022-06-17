@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task2.HelloController">
+   <children>
+      <Label fx:id="zeroTwo" layoutX="175.0" layoutY="70.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font></Label>
+      <Label fx:id="zeroThree" layoutX="286.0" layoutY="70.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font></Label>
+      <Label fx:id="zeroFour" layoutX="389.0" layoutY="70.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font></Label>
+      <Label fx:id="zeroFive" layoutX="484.0" layoutY="70.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font></Label>
+      <Label fx:id="oneOne" layoutX="77.0" layoutY="140.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="oneTwo" layoutX="175.0" layoutY="140.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="oneThree" layoutX="286.0" layoutY="140.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="oneFour" layoutX="389.0" layoutY="140.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="oneFive" layoutX="484.0" layoutY="140.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="twoOne" layoutX="77.0" layoutY="200.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="twoTwo" layoutX="175.0" layoutY="200.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="twoThree" layoutX="286.0" layoutY="200.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="twoFour" layoutX="389.0" layoutY="200.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="twoFive" layoutX="484.0" layoutY="200.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="threeOne" layoutX="77.0" layoutY="252.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="threeTwo" layoutX="175.0" layoutY="252.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="threeThree" layoutX="286.0" layoutY="252.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="threeFour" layoutX="389.0" layoutY="252.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="threeFive" layoutX="484.0" layoutY="252.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="zeroOne" layoutX="77.0" layoutY="70.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="212.0" layoutY="309.0" mnemonicParsing="false" onAction="#roll" prefHeight="69.0" prefWidth="188.0" text="Roll">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Button>
+      <Label fx:id="balanceLabel" layoutX="271.0" layoutY="14.0" text="100" textFill="#108d0e">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="350.0" layoutY="14.0" text="\$" textFill="#108d0e">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Separator layoutX="16.0" layoutY="125.0" prefHeight="0.0" prefWidth="568.0" />
+      <Separator layoutX="16.0" layoutY="190.0" prefHeight="3.0" prefWidth="568.0" />
+      <Separator layoutX="16.0" layoutY="243.0" prefHeight="3.0" prefWidth="568.0" />
+      <Separator layoutX="142.0" layoutY="52.0" orientation="VERTICAL" prefHeight="242.0" prefWidth="3.0" />
+      <Separator layoutX="250.0" layoutY="52.0" orientation="VERTICAL" prefHeight="242.0" prefWidth="0.0" />
+      <Separator layoutX="359.0" layoutY="58.0" orientation="VERTICAL" prefHeight="242.0" prefWidth="6.0" />
+      <Separator layoutX="460.0" layoutY="52.0" orientation="VERTICAL" prefHeight="242.0" prefWidth="0.0" />
+   </children>
+</AnchorPane>
