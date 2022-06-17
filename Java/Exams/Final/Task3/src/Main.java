@@ -1,7 +1,6 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
