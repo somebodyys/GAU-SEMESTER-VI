@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.memorize.project.CollectionViewController">
+   <children>
+      <TableView fx:id="collectionTable" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="569.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="39.0" text="ID" />
+          <TableColumn fx:id="questionColumn" prefWidth="237.0" text="Question" />
+            <TableColumn fx:id="answerColumn" prefWidth="223.0" text="Answer" />
+            <TableColumn fx:id="scoreColumn" prefWidth="69.0" text="Score" />
+        </columns>
+      </TableView>
+      <TextField fx:id="idInput" layoutX="259.0" layoutY="222.0" prefHeight="24.0" prefWidth="79.0" />
+      <Label layoutX="238.0" layoutY="226.0" text="ID" />
+      <Button layoutX="346.0" layoutY="222.0" mnemonicParsing="false" onAction="#load" text="load" />
+      <TextField fx:id="questionInput" layoutX="14.0" layoutY="280.0" />
+      <TextField fx:id="answerInput" layoutX="215.0" layoutY="280.0" />
+      <TextField fx:id="scoreInput" layoutX="412.0" layoutY="280.0" />
+      <Label layoutX="14.0" layoutY="259.0" text="Question" />
+      <Label layoutX="215.0" layoutY="259.0" text="Answer" />
+      <Label layoutX="412.0" layoutY="259.0" text="Score" />
+      <Button layoutX="184.0" layoutY="346.0" mnemonicParsing="false" onAction="#update" text="Update" />
+      <Button layoutX="263.0" layoutY="346.0" mnemonicParsing="false" onAction="#create" text="Create" />
+      <Button layoutX="342.0" layoutY="346.0" mnemonicParsing="false" onAction="#delete" text="Delete" />
+   </children>
+</AnchorPane>

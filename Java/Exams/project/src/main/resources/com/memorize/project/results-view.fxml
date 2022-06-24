@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.memorize.project.ResultsViewController">
+   <children>
+      <TableView fx:id="resultsTable" layoutX="15.0" layoutY="33.0" prefHeight="147.0" prefWidth="570.0">
+        <columns>
+          <TableColumn fx:id="idColumnResults" prefWidth="42.0" text="ID" />
+          <TableColumn fx:id="scoreColumnResults" prefWidth="225.0" text="Score" />
+            <TableColumn fx:id="noteColumnResults" prefWidth="302.0" text="note" />
+        </columns>
+      </TableView>
+      <TableView fx:id="detailsTable" layoutX="14.0" layoutY="229.0" prefHeight="164.0" prefWidth="570.0">
+        <columns>
+          <TableColumn fx:id="idColumnDetails" prefWidth="38.0" text="ID" />
+            <TableColumn fx:id="questionIdColumnDetails" prefWidth="120.0" text="Question ID" />
+            <TableColumn fx:id="answeredColumnDetails" prefWidth="327.0" text="Answered" />
+            <TableColumn fx:id="scoreColumnDetails" minWidth="0.0" prefWidth="84.0" text="Score" />
+        </columns>
+      </TableView>
+      <Label layoutX="15.0" layoutY="14.0" text="Results" />
+      <Label layoutX="15.0" layoutY="213.0" text="Details" />
+      <TextField fx:id="idInput" layoutX="263.0" layoutY="188.0" prefHeight="24.0" prefWidth="72.0" />
+      <Button layoutX="347.0" layoutY="188.0" mnemonicParsing="false" onAction="#load" text="Load" />
+      <Label layoutX="242.0" layoutY="192.0" text="ID" />
+   </children>
+</AnchorPane>
